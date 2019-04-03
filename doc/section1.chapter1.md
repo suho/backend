@@ -118,8 +118,8 @@ git config --list --show-origin
 The first thing you should do when you install Git is set your username and email address. This is important because every Git commit uses this information, and it's immutably baked into the commits you start creating
 
 ```bash
-$ git config --global user.name suho
-$ git config --global user.email suho@example.com
+git config --global user.name suho
+git config --global user.email suho@example.com
 ```
 
 Because Git will always use that information for anything you do on that system so you need to to do this only once if you pass the `--global` option. Without `--global`, you will use different name or email for specific projects.
