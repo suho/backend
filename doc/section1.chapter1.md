@@ -79,6 +79,53 @@ This makes using Git a joy because we know we can experiment without the danger 
   <img src='../img/section1.chapter1/Image3.jpg' width='50%'>
 </p>
 
+- **The Git directory** is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer
+- **The working tree** (working directory) is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+- **The staging area** is a file, generally contained in your Git directory, that stores information about what will go into your next commit.
+
+The basic Git workflow goes something like this:
+
+1. You modify files in your working tree
+2. You selectively stage just those changes you want to be part of your next commit, which adds only those changes to the staging area.
+3. You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.
+
+#### The Command Line
+
+There are a lot of different ways to use Git. There are the original command-line tools, and there are many graphical user interfaces of varying capabilities. For backend developer, I suggest using Git on the command line. For one, the command line is the only place you can run all Git commands.
+
+#### Installing Git
+
+You need go to the website [git-scm.com][git-scm] to download and install **Git**.
+
+After download and install, run **git** from terminal the very first time
+
+> $ git --version
+
+#### First-Time Git Setup
+
+Now that you have Git on your system, you will want to do a few things to customize your Git environment.
+
+First, you can view all of your settings and where they are coming from using:
+
+> $ git config --list --show-origin
+
+#### Your Identity
+
+The first thing you should do when you install Git is set your username and email address. This is important because every Git commit uses this information, and it's immutably baked into the commits you start creating
+
+```bash
+$ git config --global user.name suho
+$ git config --global user.email suho@example.com
+```
+
+Because Git will always use that information for anything you do on that system so you need to to do this only once if you pass the `--global` option. Without `--global`, you will use different name or email for specific projects.
+
+#### Checking Your Settings
+
+If you want to check your configuration, run:
+
+> $ git config --list
+
 ## Git Basics
 
 In this section, we will learn how to use Git in the 80% of cases you'll encounter most often. After this section, you will be able to clone a repository, see what has happened in the history of the project, modify files, and contribute changes.
@@ -120,3 +167,4 @@ After know all about Git and can wield it with power and grace, you can move on 
 [Image 1]: ../img/section1.chapter1/Image1.jpg
 [Image 2]: ../img/section1.chapter1/Image2.jpg
 [Image 3]: ../img/section1.chapter1/Image3.jpg
+[git-scm]: https://git-scm.com
