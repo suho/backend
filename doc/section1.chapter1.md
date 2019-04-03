@@ -35,7 +35,9 @@ If you are a developer and you want to keep every version of your code, a Versio
 
 Git is a **Distributed Version Control System** (DVCS), in a DVCS, clients don't just check out the latest snapshot of the files; rather, the fully mirror the repository, including its full history. Thus, if any server dies, and these systems were collaborating via the server, any of the client repositories can be copied back up to the server to restore it.
 
-![Image 1]
+<p align="center">
+  <img src='../img/section1.chapter1/Image1.jpg' width='50%'>
+</p>
 
 ### What is Git?
 
@@ -45,7 +47,9 @@ So, what is Git in a nutshell?
 
 With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn't store the file again, just a link to the previous identical file it has already stored.
 
-![Image 2]
+<p align="center">
+  <img src='../img/section1.chapter1/Image2.jpg' width='50%'>
+</p>
 
 #### Nearly Every Operation Is Local
 
@@ -71,7 +75,9 @@ This makes using Git a joy because we know we can experiment without the danger 
 - Modifed means that you have changed the file but have not committed it to your database yet.
 - Staged means that you have marked a modified file in its current version to go into your next commit snapshot
 
-![Image 3]
+<p align="center">
+  <img src='../img/section1.chapter1/Image3.jpg' width='50%'>
+</p>
 
 ## Git Basics
 
