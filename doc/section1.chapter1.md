@@ -12,6 +12,7 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
 - [Chapter 1: Git - Version Control](#chapter-1-git---version-control)
   - [Getting Started](#getting-started)
     - [Version Control](#version-control)
+    - [What is Git?](#what-is-git)
   - [Git Basics](#git-basics)
   - [Git Branching](#git-branching)
   - [Git On The Server](#git-on-the-server)
@@ -36,6 +37,41 @@ Git is a **Distributed Version Control System** (DVCS), in a DVCS, clients don't
 
 ![Image 1]
 
+### What is Git?
+
+So, what is Git in a nutshell?
+
+#### Snapshots, Not Differences
+
+With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn't store the file again, just a link to the previous identical file it has already stored.
+
+![Image 2]
+
+#### Nearly Every Operation Is Local
+
+Most operations in Git need only local fils and resources to operate - generally no information is needed from another computer on your network. You have the entire history of the project right there on your local disk, most operations seem almost instantaneous.
+
+For example, to browse the history of the proejct, Git doesn't need to go out to the sever to get the history and display it for you - it simply reads it directly from your local database.
+
+#### Git Has Integrity
+
+Everything in Git is checksummed before it is stored and is then referred to by that checksums. This means it's impossible to change to contents of any file or directory without Git knowing about it.
+
+#### Git Generally Only Adds Data
+
+When you do actions in Git, nearly all of them only add data to the Git database. It is hard to get the system to do anything that is not undoable or to make it erase data in any way. After you commit a a snapshot into Git, it is very difficult to lose, especially if you regularly push your database to another repository.
+
+This makes using Git a joy because we know we can experiment without the danger of severely screwing things up.
+
+#### The Three States
+
+**Pay attention now** - here is the main thing to remember about Git if you want the rest of your learning process to go smoothly. Git has three main states that your files can reside in: **committed**, **modified**, and **staged**:
+
+- Committed means that the data is safely stored in your local database
+- Modifed means that you have changed the file but have not committed it to your database yet.
+- Staged means that you have marked a modified file in its current version to go into your next commit snapshot
+
+![Image 3]
 
 ## Git Basics
 
@@ -76,3 +112,5 @@ After know all about Git and can wield it with power and grace, you can move on 
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [Image 1]: ../img/section1.chapter1/Image1.jpg
+[Image 2]: ../img/section1.chapter1/Image2.jpg
+[Image 3]: ../img/section1.chapter1/Image3.jpg
