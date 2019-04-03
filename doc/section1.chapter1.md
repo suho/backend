@@ -95,11 +95,13 @@ There are a lot of different ways to use Git. There are the original command-lin
 
 #### Installing Git
 
-You need go to the website [git-scm.com][git-scm] to download and install **Git**.
+You need to go to the website [git-scm.com][git-scm] for download and install **Git**.
 
 After download and install, run **git** from terminal the very first time
 
-> $ git --version
+```sh
+git --version
+```
 
 #### First-Time Git Setup
 
@@ -107,7 +109,9 @@ Now that you have Git on your system, you will want to do a few things to custom
 
 First, you can view all of your settings and where they are coming from using:
 
-> $ git config --list --show-origin
+```sh
+git config --list --show-origin
+```
 
 #### Your Identity
 
@@ -124,7 +128,9 @@ Because Git will always use that information for anything you do on that system 
 
 If you want to check your configuration, run:
 
-> $ git config --list
+```sh
+git config --list
+```
 
 ## Git Basics
 
