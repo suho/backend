@@ -34,7 +34,7 @@ If you are a developer and you want to keep every version of your code, a Versio
 
 Git is a **Distributed Version Control System** (DVCS), in a DVCS, clients don't just check out the latest snapshot of the files; rather, the fully mirror the repository, including its full history. Thus, if any server dies, and these systems were collaborating via the server, any of the client repositories can be copied back up to the server to restore it.
 
-[Image 1]
+![Image 1]
 
 
 ## Git Basics
