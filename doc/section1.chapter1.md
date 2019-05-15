@@ -445,6 +445,13 @@ The way to delete a remote tag is with:
 git push origin --delete <tagname>
 ```
 
+#### Checking out Tags
+If you want to view the versions of files a tag is pointing to, you can do a `git checkout` of that tag
+
+```bash
+git checkout v0.0.1
+```
+
 ## Git Branching
 
 In this section, you will learn what truly sets Git apart from the pack
