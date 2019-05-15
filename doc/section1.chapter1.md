@@ -627,6 +627,43 @@ git merge iss53
 
 ![Image 17]
 
+Now that your work is merged in, you have no further need for the `iss53` branch. You can close the ticket in your ticket-tracking system, and delete the branch:
+
+```bash
+git branch -d iss53
+```
+
+#### Basic Merge Conflicts
+
+Occasionally, this process doesn’t go smoothly. If you changed the same part of the same file differently in the two branches you’re merging, Git won’t be able to merge them cleanly. If your fix for issue #53 modified the same part of a file as the hotfix branch, you’ll get a merge conflict that looks something like this
+
+```bash
+git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Anything that has merge conflicts and hasn’t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts. Your file contains a section that looks something like this:
+
+```html
+<<<<<<< HEAD:index.html
+<div id="footer">Contact : e.support@example.com</div>
+=======
+<div id="footer">
+Please contact us at support@example.com
+</div>
+>>>>>>> iss53:index.html
+```
+
+In order to resolve the conflict, you have to either choose one side or the other or merge the contents yourself. For instance, you might resolve this conflict by replacing the entire block with this: 
+
+```html
+<div id="footer">
+please contact us at email.support@github.com
+</div>
+```
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
