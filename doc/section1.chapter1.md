@@ -740,6 +740,14 @@ $ git merge experiment
   <img src="../img/section1.chapter1/Image21.png">
 </p>
 
+#### More Interesting Rebases
+
+You can also have your rebase replay on something other than the rebase target branch. For example, you branched a topic branch (server) to add some server-side functionality to your project, and made a commit. Then, you branched off that to make the client-side changes (client) and committed a few times. Finally, you went back to your server branch and did a few more commits.
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image22.png">
+</p>
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
