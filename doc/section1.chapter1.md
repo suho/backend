@@ -521,4 +521,5 @@ We will go over in full detail various distributed workflows and how to accompli
 [Image 8]: ../img/section1.chapter1/Image8.png
 [Image 9]: ../img/section1.chapter1/Image9.png
 [Image 10]: ../img/section1.chapter1/Image10.png
+[Image 11]: ../img/section1.chapter1/Image11.png
 [git-scm]: https://git-scm.com
