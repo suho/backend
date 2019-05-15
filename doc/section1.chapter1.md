@@ -781,6 +781,36 @@ $ git rebase master server
   <img src="../img/section1.chapter1/Image25.jpg">
 </p>
 
+Then, you can fast-forward the base branch (`master`):
+
+```bash
+$ git checkout master
+$ git merge server
+```
+
+You can remove the client and server branches because all the work is integrated and you don’t need them anymore
+
+```bash
+$ git branch -d client
+$ git branch -d server
+```
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image26.jpg">
+</p>
+
+#### The Perils of Rebasing
+
+Ahh, but the bliss of rebasing isn’t without its drawbacks, which can be summed up in a single line:
+
+**Do not rebase commits that exist outside your repository and people may have based work on them.**
+
+If you follow that guideline, you’ll be fine. If you don’t, people will hate you, and you’ll be scorned by friends and family.
+
+When you rebase stuff, you’re abandoning existing commits and creating new ones that are similar but different. If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with git rebase and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.
+
+For more example, please take a look in ![Pro Git][Pro Git] book.
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
