@@ -473,6 +473,22 @@ This creates a new pointer to the same commit you’re currently on.
 
 ![Image 6]
 
+The `git branch` command only **created** a new branch — it didn’t **switch** to that branch.
+
+![Image 7]
+
+#### Switching Branches
+
+To switch to an existing branch, you run the `git checkout` command. Let’s switch to the new `testing` branch:
+
+```bash
+git checkout testing
+```
+
+This moves `HEAD` to point to the `testing` branch.
+
+![Image 8]
+
 ## Distributed Git
 
 We will go over in full detail various distributed workflows and how to accomplish them with Git, after this section, you will be able to work expertly with multiple remote repositories
@@ -485,4 +501,6 @@ We will go over in full detail various distributed workflows and how to accompli
 [Image 4]: ../img/section1.chapter1/Image4.png
 [Image 5]: ../img/section1.chapter1/Image5.png
 [Image 6]: ../img/section1.chapter1/Image6.png
+[Image 7]: ../img/section1.chapter1/Image7.png
+[Image 8]: ../img/section1.chapter1/Image8.png
 [git-scm]: https://git-scm.com
