@@ -203,7 +203,7 @@ snapshot and are not in your staging area. When you first clone a repository, al
 tracked and unmodified because Git just checked them out and you haven’t edited anything.
 
 <p align="center">
-  <img src='../img/section1.chapter1/Image4.png' width='50%'>
+  <img src='../img/section1.chapter1/Image4.png'>
 </p>
 
 ## Git Branching
