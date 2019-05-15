@@ -646,7 +646,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Anything that has merge conflicts and hasn’t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts. Your file contains a section that looks something like this:
 
-```html
+```diff
 <<<<<<< HEAD:index.html
 <div id="footer">Contact : e.support@example.com</div>
 =======
@@ -655,6 +655,10 @@ Please contact us at support@example.com
 </div>
 >>>>>>> iss53:index.html
 ```
+
+This means the version in HEAD (your master branch, because that was what you had checked out
+when you ran your merge command) is the top part of that block (everything above the =======),
+while the version in your iss53 branch looks like everything in the bottom part
 
 In order to resolve the conflict, you have to either choose one side or the other or merge the contents yourself. For instance, you might resolve this conflict by replacing the entire block with this: 
 
