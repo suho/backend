@@ -489,6 +489,22 @@ This moves `HEAD` to point to the `testing` branch.
 
 ![Image 8]
 
+The `HEAD` branch moves forward when a commit is made
+
+![Image 9]
+
+This is interesting, because now your `testing` branch has moved forward, but your `master` branch still points to the commit you were on when you ran `git checkout` to switch branches. Let’s switch back to the `master` branch:
+
+```bash
+git checkout master
+```
+
+![Image 10]
+
+Now, let’s make a few changes and commit again.
+
+![Image 11]
+
 ## Distributed Git
 
 We will go over in full detail various distributed workflows and how to accomplish them with Git, after this section, you will be able to work expertly with multiple remote repositories
@@ -503,4 +519,6 @@ We will go over in full detail various distributed workflows and how to accompli
 [Image 6]: ../img/section1.chapter1/Image6.png
 [Image 7]: ../img/section1.chapter1/Image7.png
 [Image 8]: ../img/section1.chapter1/Image8.png
+[Image 9]: ../img/section1.chapter1/Image9.png
+[Image 10]: ../img/section1.chapter1/Image10.png
 [git-scm]: https://git-scm.com
