@@ -49,9 +49,7 @@ So, what is Git in a nutshell?
 
 With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn't store the file again, just a link to the previous identical file it has already stored.
 
-<p align="center">
-  <img src='../img/section1.chapter1/Image2.jpg'>
-</p>
+![Image 2]
 
 #### Nearly Every Operation Is Local
 
@@ -77,9 +75,7 @@ This makes using Git a joy because we know we can experiment without the danger 
 - Modifed means that you have changed the file but have not committed it to your database yet.
 - Staged means that you have marked a modified file in its current version to go into your next commit snapshot
 
-<p align="center">
-  <img src='../img/section1.chapter1/Image3.jpg'>
-</p>
+![Image 3]
 
 - **The Git directory** is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer
 - **The working tree** (working directory) is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
@@ -175,9 +171,7 @@ Each file in your working directory can be in one of two states: tracked or untr
 
 **Untracked files** are everything else — any files in your working directory that were not in your last snapshot and are not in your staging area. When you first clone a repository, all of your files will be tracked and unmodified because Git just checked them out and you haven’t edited anything.
 
-<p align="center">
-  <img src='../img/section1.chapter1/Image4.png'>
-</p>
+![Image 4]
 
 #### Checking the Status of Your Files
 
