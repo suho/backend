@@ -570,6 +570,32 @@ git merge hotfix
 
 ![Image 15]
 
+After your super-important fix is deployed, you’re ready to switch back to the work you were doing before you were interrupted. However, first you’ll delete the `hotfix` branch, because you no longer need it — the `master` branch points at the same place. You can delete it with the `-d` option to `git branch`:
+
+```bash
+git branch -d hotfix
+```
+
+Now you can switch back to your work-in-progress branch on issue #53 and continue working on it.
+
+```bash
+git checkout iss53
+```
+
+![Image 16]
+
+It’s worth noting here that the work you did in your `hotfix` branch is not contained in the files in your `iss53` branch. If you need to pull it in, you can merge your `master` branch into your `iss53` branch by running `git merge master`, or you can wait to integrate those changes until you decide to pull the `iss53` branch back into `master` later.
+
+#### Basic Merging
+
+Suppose you’ve decided that your issue #53 work is complete and ready to be merged into your `master` branch. In order to do that, you’ll merge your `iss53` branch into `master`, much like you merged your `hotfix` branch earlier. All you have to do is check out the branch you wish to merge into and then run the git merge command:
+
+```bash
+git checkout master
+git merge iss53
+```
+
+![Image 17]
 
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
@@ -589,3 +615,5 @@ git merge hotfix
 [Image 13]: ../img/section1.chapter1/Image13.png
 [Image 14]: ../img/section1.chapter1/Image14.png
 [Image 15]: ../img/section1.chapter1/Image15.png
+[Image 16]: ../img/section1.chapter1/Image16.png
+[Image 17]: ../img/section1.chapter1/Image17.png
