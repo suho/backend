@@ -716,6 +716,30 @@ The easiest way to integrate the branches, as we’ve already covered, is the `m
   <img src="../img/section1.chapter1/Image19.png">
 </p>
 
+However, there is another way: you can take the patch of the change that was introduced in `C4` and reapply it on top of `C3`. In Git, this is called `rebasing`. With the `rebase` command, you can take all the changes that were committed on one branch and replay them on a different branch.
+
+For this example, you would check out the `experiment` branch, and then rebase it onto the master branch as `follows`
+
+```bash
+$ git checkout experiment
+$ git rebase master
+```
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image20.png">
+</p>
+
+At this point, you can go back to the `master` branch and do a fast-forward merge.
+
+```bash
+$ git checkout master
+$ git merge experiment
+```
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image21.png">
+</p>
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
