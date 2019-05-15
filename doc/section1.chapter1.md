@@ -21,13 +21,8 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
     - [Working with Remotes](#working-with-remotes)
     - [Tagging](#tagging)
   - [Git Branching](#git-branching)
-  - [Git On The Server](#git-on-the-server)
+    - [Branches in a Nutshell](#branches-in-a-nutshell)
   - [Distributed Git](#distributed-git)
-  - [Github](#github)
-  - [Git Tools](#git-tools)
-  - [Custimizing Git](#custimizing-git)
-  - [Git And Other Systems](#git-and-other-systems)
-  - [Git Internals](#git-internals)
 
 ## Getting Started
 
@@ -454,35 +449,17 @@ git checkout v0.0.1
 
 ## Git Branching
 
-In this section, you will learn what truly sets Git apart from the pack
+Branching means you diverge from the main line of development and continue to do work without messing with that main line.
 
-## Git On The Server
+Git’s branching model as its `killer feature`. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast.
 
-This section is for those of you who want to set up Git inside your organization or on your own personal server for collaboration.
+### Branches in a Nutshell
+
+As you may remember from [Getting Started](#getting-started), Git doesn’t store data as a series of changesets or differences, but instead as a series of snapshots
 
 ## Distributed Git
 
 We will go over in full detail various distributed workflows and how to accomplish them with Git, after this section, you will be able to work expertly with multiple remote repositories
-
-## Github
-
-We will cover signing up for and managing an account, creating and using Git repositories, common workflows to contribute to projects and more features of Github.
-
-## Git Tools
-
-Here you will learn about topics like mastering the scary **reset** command, using binary search to identify bugs, editing history, revision selection in detail, and a lot more.
-
-## Custimizing Git
-
-This section includes setting up hook scripts to enforce or encourage customized policies and using environment configuration settings so you can work the way you want.
-
-## Git And Other Systems
-
-This includes using Git in a Subversion (SVN) world and converting projects from ohter VCSs to Git
-
-## Git Internals
-
-After know all about Git and can wield it with power and grace, you can move on to discuss how Git stores its objects, what is object model is, details of packfiles, server protocols, and more
 
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
