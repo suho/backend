@@ -600,7 +600,7 @@ git merge iss53
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
-[Image 1]: ../img/section1.chapter1/Image1.jpg
+[Image 1]: ../img/section1.chapter1/Image1.png
 [Image 2]: ../img/section1.chapter1/Image2.jpg
 [Image 3]: ../img/section1.chapter1/Image3.jpg
 [Image 4]: ../img/section1.chapter1/Image4.png
