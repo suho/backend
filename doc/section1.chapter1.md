@@ -142,8 +142,7 @@ In this section, we will learn how to use Git in the 80% of cases you'll encount
 
 You typically obtain a Git repository in one of two ways:
 
-1. You can take a local directory that is currently not under version control, and turn it into a Git
-repository, or
+1. You can take a local directory that is currently not under version control, and turn it into a Git repository, or
 2. You can clone an existing Git repository from elsewhere.
 
 #### Initializing a Repository in an Existing Directory
@@ -160,51 +159,81 @@ and type:
 git init
 ```
 
-This creates a new subdirectory named .git that contains all of your necessary repository files — a
-Git repository skeleton
+This creates a new subdirectory named .git that contains all of your necessary repository files — a Git repository skeleton
 
 #### Cloning an Existing Repository
 
-If you want to get a copy of an existing Git repository — for example, a project you’d like to
-contribute to — the command you need is `git clone`.
+If you want to get a copy of an existing Git repository — for example, a project you’d like to contribute to — the command you need is `git clone`.
 
-Every version of every file for the history of the project is pulled down by default
-when you run `git clone`.
-
-You clone a repository with git clone <url>. For example, if you want to clone the Git linkable
-library called `libgit2`, you can do so like this:
-
-```bash
-git clone https://github.com/libgit2/libgit2
-```
-
-That creates a directory named `libgit2`, initializes a .git directory inside it, pulls down all the data
-for that repository, and checks out a working copy of the latest version. If you go into the new
-`libgit2` directory that was just created, you’ll see the project files in there, ready to be worked on or
-used.
-
-If you want to clone the repository into a directory named something other than `libgit2`, you can
-specify the new directory name as an additional argument:
-
-```bash
-git clone https://github.com/libgit2/libgit2 mylibgit
-```
+Every version of every file for the history of the project is pulled down by default when you run `git clone`.
 
 ### Recording Changes to the Repository
 
-Each file in your working directory can be in one of two states: tracked or
-untracked. 
+Each file in your working directory can be in one of two states: tracked or untracked. 
 
-**Tracked files** are files that were in the last snapshot; they can be unmodified, modified,
-or staged. In short, tracked files are files that Git knows about.
+**Tracked files** are files that were in the last snapshot; they can be unmodified, modified, or staged. In short, tracked files are files that Git knows about.
 
-**Untracked files** are everything else — any files in your working directory that were not in your last
-snapshot and are not in your staging area. When you first clone a repository, all of your files will be
-tracked and unmodified because Git just checked them out and you haven’t edited anything.
+**Untracked files** are everything else — any files in your working directory that were not in your last snapshot and are not in your staging area. When you first clone a repository, all of your files will be tracked and unmodified because Git just checked them out and you haven’t edited anything.
 
 <p align="center">
   <img src='../img/section1.chapter1/Image4.png'>
 </p>
+
+#### Checking the Status of Your Files
+
+The main tool you use to determine which files are in which state is the `git status` command.
+
+```bash
+$ git status
+```
+
+#### Tracking New Files
+
+In order to begin tracking a new file, you use the command `git add`. To begin tracking the README file, you can run this:
+
+```bash
+$ git add [fileName]
+```
+
+#### Staging Modified Files
+
+`git add` is a **multipurpose** command — you use it to begin **tracking new files**, to **stage files**, and to do other things like **marking merge-conflicted files as resolved**.
+
+#### Short Status
+
+While the git status output is pretty comprehensive, it’s also quite wordy. Git also has a short status flag so you can see your changes in a more compact way
+
+```bash
+git status -s
+```
+
+#### Ignoring Files
+
+Often, you’ll have a class of files that you don’t want Git to automatically add or even show you as being untracked. These are generally automatically generated files such as log files or files produced by your build system. In such cases, you can create a file listing patterns to match them named `.gitignore`. 
+
+Here is an example `.gitignore` file:
+
+```bash
+# ignore all .a files
+*.a
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+# ignore all files in any directory named build
+build/
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+```
+
+The rules for the patterns you can put in the `.gitignore` file are as follows:
+- Blank lines or lines starting with # are ignored.
+- Standard glob patterns work, and will be applied recursively throughout the entire working tree.
+- You can start patterns with a forward slash (/) to avoid recursivity.
+- You can end patterns with a forward slash (/) to specify a directory.
+- You can negate a pattern by starting it with an exclamation point (!).
 
 ## Git Branching
 
