@@ -561,8 +561,19 @@ git checkout -b hotfix
 
 ![Image 14]
 
+You can run your tests, make sure the hotfix is what you want, and finally merge the `hotfix` branch back into your `master` branch to deploy to production. You do this with the `git merge` command
+
+```bash
+git checkout master
+git merge hotfix
+```
+
+![Image 15]
+
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
+[git-scm]: https://git-scm.com
 [Image 1]: ../img/section1.chapter1/Image1.jpg
 [Image 2]: ../img/section1.chapter1/Image2.jpg
 [Image 3]: ../img/section1.chapter1/Image3.jpg
@@ -577,4 +588,4 @@ git checkout -b hotfix
 [Image 12]: ../img/section1.chapter1/Image12.png
 [Image 13]: ../img/section1.chapter1/Image13.png
 [Image 14]: ../img/section1.chapter1/Image14.png
-[git-scm]: https://git-scm.com
+[Image 15]: ../img/section1.chapter1/Image15.png
