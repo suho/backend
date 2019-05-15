@@ -771,6 +771,16 @@ $ git merge client
   <img src="../img/section1.chapter1/Image24.png">
 </p>
 
+Let’s say you decide to pull in your server branch as well. You can rebase the server branch onto the `master` branch without having to check it out first by running `git rebase <basebranch> <topicbranch>` — which checks out the topic branch (in this case, `server`) for you and replays it onto the base branch (`master`):
+
+```bash
+$ git rebase master server
+```
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image25.jpg">
+</p>
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
