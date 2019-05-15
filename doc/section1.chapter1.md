@@ -18,6 +18,8 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
     - [Recording Changes to the Repository](#recording-changes-to-the-repository)
     - [Viewing the Commit History](#viewing-the-commit-history)
     - [Undoing Things](#undoing-things)
+    - [Working with Remotes](#working-with-remotes)
+    - [Tagging](#tagging)
   - [Git Branching](#git-branching)
   - [Git On The Server](#git-on-the-server)
   - [Distributed Git](#distributed-git)
@@ -284,6 +286,93 @@ One of the common undos takes place when you commit too early and possibly forge
 ```bash
 git commit --amend
 ```
+
+#### Unstaging a Staged File
+
+Use `git reset HEAD <file>...` to unstage.
+
+> It’s true that git reset can be a dangerous command, especially if you provide the `--hard` flag. However, in the scenario described above, the file in your working directory is not touched, so it’s relatively safe.
+
+#### Unmodifying a Modified File
+
+What if you realize that you don’t want to keep your changes to the CONTRIBUTING.md file? How can you easily unmodify it — revert it back to what it looked like when you last committed.
+
+Use `git checkout -- <file>...` to discard changes in working directory.
+
+### Working with Remotes
+
+To be able to collaborate on any Git project, you need to know how to manage your remote repositories. Remote repositories are versions of your project that are hosted on the Internet or network somewhere.
+
+> Remote repositories can be on your local machine.
+
+#### Showing your remotes
+
+To see which remote servers you have configured, you can run the `git remote` command.
+
+```bash
+git remote
+```
+
+You can also specify -v, which shows you the URLs that Git has stored for the shortname to be used when reading and writing to that remote.
+
+```bash
+git remote -v
+```
+
+#### Adding Remote Repositories
+
+Here’s how to add a new remote explicitly. To add a new remote Git repository as a shortname you can reference easily, run `git remote add <shortname> <url>`:
+
+```bash
+git remote add suho https://github.com/suho/backend-and-go
+```
+
+Now you can fetch all the information
+
+```bash
+git fetch suho
+```
+
+#### Fetching and Pulling from Your Remotes
+
+As you just saw, to get data from your remote projects, you can run:
+
+```bash
+git fetch <remote>
+```
+
+If your **current branch** is set up to track a remote branch, you can use the `git pull` command to automatically fetch and then merge that remote branch into your current branch.
+
+#### Pushing to Your Remotes
+
+When you have your project at a point that you want to share, you have to push it upstream. 
+
+The command for this is simple: `git push <remote> <branch>`. 
+
+If you want to push your master branch to your origin server (again, cloning generally sets up both of those names for you automatically), then you can run this to push any commits you’ve done back up to the server:
+
+```bash
+git push origin master
+```
+
+#### Inspecting a Remote
+
+If you want to see more information about a particular remote, you can use the `git remote show <remote>` command.
+
+```bash
+git remote show origin
+```
+
+#### Renaming and Removing Remotes
+
+You can run `git remote rename` to change a remote’s shortname. For instance, if you want to rename
+`suho` to `sh`, you can do so with git remote rename:
+
+```bash
+git remove remove suho sh
+```
+
+### Tagging
 
 ## Git Branching
 
