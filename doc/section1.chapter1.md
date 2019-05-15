@@ -547,6 +547,20 @@ You work on your website and do some commits. Doing so moves the iss53 branch fo
 
 ![Image 13]
 
+Now you get the call that there is an issue with the website, and you need to fix it immediately. With Git, you don’t have to deploy your fix along with the `iss53` changes you’ve made, and you don’t have to put a lot of effort into reverting those changes before you can work on applying your fix to what is in production. All you have to do is switch back to your `master` branch.
+
+```bash
+git checkout master
+```
+
+Next, you have a `hotfix` to make. Let’s create a `hotfix` branch on which to work until it’s completed
+
+```bash
+git checkout -b hotfix
+```
+
+![Image 14]
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [Image 1]: ../img/section1.chapter1/Image1.jpg
@@ -562,4 +576,5 @@ You work on your website and do some commits. Doing so moves the iss53 branch fo
 [Image 11]: ../img/section1.chapter1/Image11.png
 [Image 12]: ../img/section1.chapter1/Image12.png
 [Image 13]: ../img/section1.chapter1/Image13.png
+[Image 14]: ../img/section1.chapter1/Image14.png
 [git-scm]: https://git-scm.com
