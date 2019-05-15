@@ -36,7 +36,9 @@ If you are a developer and you want to keep every version of your code, a Versio
 
 Git is a **Distributed Version Control System** (DVCS), in a DVCS, clients don't just check out the latest snapshot of the files; rather, the fully mirror the repository, including its full history. Thus, if any server dies, and these systems were collaborating via the server, any of the client repositories can be copied back up to the server to restore it.
 
-![Image 1]
+<p align="center">
+  <img src="../img/section1.chapter1/Image1.png" width="50%">
+</p>
 
 ### What is Git?
 
@@ -46,7 +48,9 @@ So, what is Git in a nutshell?
 
 With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn't store the file again, just a link to the previous identical file it has already stored.
 
-![Image 2]
+<p align="center">
+  <img src="../img/section1.chapter1/Image2.jpg">
+</p>
 
 #### Nearly Every Operation Is Local
 
@@ -72,7 +76,9 @@ This makes using Git a joy because we know we can experiment without the danger 
 - Modifed means that you have changed the file but have not committed it to your database yet.
 - Staged means that you have marked a modified file in its current version to go into your next commit snapshot
 
-![Image 3]
+<p align="center">
+  <img src="../img/section1.chapter1/Image3.jpg">
+</p>
 
 - **The Git directory** is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer
 - **The working tree** (working directory) is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
@@ -168,7 +174,9 @@ Each file in your working directory can be in one of two states: tracked or untr
 
 **Untracked files** are everything else — any files in your working directory that were not in your last snapshot and are not in your staging area. When you first clone a repository, all of your files will be tracked and unmodified because Git just checked them out and you haven’t edited anything.
 
-![Image 4]
+<p align="center">
+  <img src="../img/section1.chapter1/Image4.png" width="70%">
+</p>
 
 #### Checking the Status of Your Files
 
@@ -459,7 +467,9 @@ The default branch name in Git is `master`. As you start making commits, you’r
 
 > The “master” branch in Git is not a special branch. It is exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
 
-![Image 5]
+<p align="center">
+  <img src="../img/section1.chapter1/Image5.png" width="60%">
+</p>
 
 #### Creating a New Branch
 
@@ -471,11 +481,15 @@ git branch testing
 
 This creates a new pointer to the same commit you’re currently on.
 
-![Image 6]
+<p align="center">
+  <img src="../img/section1.chapter1/Image6.png" width="60%">
+</p>
 
 The `git branch` command only **created** a new branch — it didn’t **switch** to that branch.
 
-![Image 7]
+<p align="center">
+  <img src="../img/section1.chapter1/Image7.png" width="60%">
+</p>
 
 #### Switching Branches
 
@@ -487,11 +501,15 @@ git checkout testing
 
 This moves `HEAD` to point to the `testing` branch.
 
-![Image 8]
+<p align="center">
+  <img src="../img/section1.chapter1/Image8.png" width="60%">
+</p>
 
 The `HEAD` branch moves forward when a commit is made
 
-![Image 9]
+<p align="center">
+  <img src="../img/section1.chapter1/Image9.png" width="60%">
+</p>
 
 This is interesting, because now your `testing` branch has moved forward, but your `master` branch still points to the commit you were on when you ran `git checkout` to switch branches. Let’s switch back to the `master` branch:
 
@@ -499,11 +517,15 @@ This is interesting, because now your `testing` branch has moved forward, but yo
 git checkout master
 ```
 
-![Image 10]
+<p align="center">
+  <img src="../img/section1.chapter1/Image10.png" width="60%">
+</p>
 
 Now, let’s make a few changes and commit again.
 
-![Image 11]
+<p align="center">
+  <img src="../img/section1.chapter1/Image11.png" width="60%">
+</p>
 
 ### Basic Branching and Merging
 
@@ -526,7 +548,9 @@ following:
 
 First, let’s say you’re working on your project and have a couple of commits already on the master branch.
 
-![Image 12]
+<p align="center">
+  <img src="../img/section1.chapter1/Image12.png" width="70%">
+</p>
 
 You’ve decided that you’re going to work on issue #53 in whatever issue-tracking system your company uses. 
 
@@ -545,7 +569,9 @@ git checkout iss53
 
 You work on your website and do some commits. Doing so moves the iss53 branch forward, because you have it checked out (that is, your HEAD is pointing to it).
 
-![Image 13]
+<p align="center">
+  <img src="../img/section1.chapter1/Image13.png" width="60%">
+</p>
 
 Now you get the call that there is an issue with the website, and you need to fix it immediately. With Git, you don’t have to deploy your fix along with the `iss53` changes you’ve made, and you don’t have to put a lot of effort into reverting those changes before you can work on applying your fix to what is in production. All you have to do is switch back to your `master` branch.
 
@@ -559,7 +585,9 @@ Next, you have a `hotfix` to make. Let’s create a `hotfix` branch on which to 
 git checkout -b hotfix
 ```
 
-![Image 14]
+<p align="center">
+  <img src="../img/section1.chapter1/Image14.png" width="60%">
+</p>
 
 You can run your tests, make sure the hotfix is what you want, and finally merge the `hotfix` branch back into your `master` branch to deploy to production. You do this with the `git merge` command
 
@@ -568,7 +596,9 @@ git checkout master
 git merge hotfix
 ```
 
-![Image 15]
+<p align="center">
+  <img src="../img/section1.chapter1/Image15.png" width="60%">
+</p>
 
 After your super-important fix is deployed, you’re ready to switch back to the work you were doing before you were interrupted. However, first you’ll delete the `hotfix` branch, because you no longer need it — the `master` branch points at the same place. You can delete it with the `-d` option to `git branch`:
 
@@ -600,20 +630,5 @@ git merge iss53
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
-[Image 1]: ../img/section1.chapter1/Image1.png
-[Image 2]: ../img/section1.chapter1/Image2.jpg
-[Image 3]: ../img/section1.chapter1/Image3.jpg
-[Image 4]: ../img/section1.chapter1/Image4.png
-[Image 5]: ../img/section1.chapter1/Image5.png
-[Image 6]: ../img/section1.chapter1/Image6.png
-[Image 7]: ../img/section1.chapter1/Image7.png
-[Image 8]: ../img/section1.chapter1/Image8.png
-[Image 9]: ../img/section1.chapter1/Image9.png
-[Image 10]: ../img/section1.chapter1/Image10.png
-[Image 11]: ../img/section1.chapter1/Image11.png
-[Image 12]: ../img/section1.chapter1/Image12.png
-[Image 13]: ../img/section1.chapter1/Image13.png
-[Image 14]: ../img/section1.chapter1/Image14.png
-[Image 15]: ../img/section1.chapter1/Image15.png
 [Image 16]: ../img/section1.chapter1/Image16.png
 [Image 17]: ../img/section1.chapter1/Image17.png
