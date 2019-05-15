@@ -23,6 +23,8 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
   - [Git Branching](#git-branching)
     - [Branches in a Nutshell](#branches-in-a-nutshell)
     - [Basic Branching and Merging](#basic-branching-and-merging)
+    - [Branch Management](#branch-management)
+    - [Rebasing](#rebasing)
 
 ## Getting Started
 
@@ -119,8 +121,8 @@ git config --list --show-origin
 The first thing you should do when you install Git is set your username and email address. This is important because every Git commit uses this information, and it's immutably baked into the commits you start creating
 
 ```bash
-git config --global user.name suho
-git config --global user.email suho@example.com
+$ git config --global user.name suho
+$ git config --global user.email suho@example.com
 ```
 
 Because Git will always use that information for anything you do on that system so you need to to do this only once if you pass the `--global` option. Without `--global`, you will use different name or email for specific projects.
@@ -149,13 +151,13 @@ You typically obtain a Git repository in one of two ways:
 You first need to go to that project’s directory.
 
 ```bash
-cd ~/your-project
+$ cd ~/your-project
 ```
 
 and type:
 
 ```bash
-git init
+$ git init
 ```
 
 This creates a new subdirectory named .git that contains all of your necessary repository files — a Git repository skeleton
@@ -183,7 +185,7 @@ Each file in your working directory can be in one of two states: tracked or untr
 The main tool you use to determine which files are in which state is the `git status` command.
 
 ```bash
-git status
+$ git status
 ```
 
 #### Tracking New Files
@@ -191,7 +193,7 @@ git status
 In order to begin tracking a new file, you use the command `git add`. To begin tracking the README file, you can run this:
 
 ```bash
-git add [fileName]
+$ git add [fileName]
 ```
 
 #### Staging Modified Files
@@ -203,7 +205,7 @@ git add [fileName]
 While the git status output is pretty comprehensive, it’s also quite wordy. Git also has a short status flag so you can see your changes in a more compact way
 
 ```bash
-git status -s
+$ git status -s
 ```
 
 #### Ignoring Files
@@ -239,7 +241,7 @@ The rules for the patterns you can put in the `.gitignore` file are as follows:
 If you want to know exactly what you changed, not just which files were changed — you can use the `git diff` command
 
 ```bash
-git diff
+$ git diff
 ```
 
 #### Committing Your Changes
@@ -249,14 +251,14 @@ Now that your staging area is set up the way you want it, you can commit your ch
 The simplest way to commit is to type git commit:
 
 ```bash
-git commit
+$ git commit
 ```
 
 Alternatively, you can type your commit message inline with the commit command by specifying it
 after a -m flag, like this:
 
 ```bash
-git commit -m "Story 01: Fix Login UI`
+$ git commit -m "Story 01: Fix Login UI`
 ```
 
 ### Viewing the Commit History
@@ -264,7 +266,7 @@ git commit -m "Story 01: Fix Login UI`
 After you have created several commits, or if you have cloned a repository with an existing commit history, you’ll probably want to look back to see what has happened. The most basic and powerful tool to do this is the git log command.
 
 ```bash
-git log
+$ git log
 ```
 
 #### Common Options to `git log`
@@ -287,7 +289,7 @@ git log
 One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to redo that commit, make the additional changes you forgot, stage them, and commit again using the --amend option:
 
 ```bash
-git commit --amend
+$ git commit --amend
 ```
 
 #### Unstaging a Staged File
@@ -313,13 +315,13 @@ To be able to collaborate on any Git project, you need to know how to manage you
 To see which remote servers you have configured, you can run the `git remote` command.
 
 ```bash
-git remote
+$ git remote
 ```
 
 You can also specify -v, which shows you the URLs that Git has stored for the shortname to be used when reading and writing to that remote.
 
 ```bash
-git remote -v
+$ git remote -v
 ```
 
 #### Adding Remote Repositories
@@ -327,13 +329,13 @@ git remote -v
 Here’s how to add a new remote explicitly. To add a new remote Git repository as a shortname you can reference easily, run `git remote add <shortname> <url>`:
 
 ```bash
-git remote add suho https://github.com/suho/backend-and-go
+$ git remote add suho https://github.com/suho/backend-and-go
 ```
 
 Now you can fetch all the information
 
 ```bash
-git fetch suho
+$ git fetch suho
 ```
 
 #### Fetching and Pulling from Your Remotes
@@ -341,7 +343,7 @@ git fetch suho
 As you just saw, to get data from your remote projects, you can run:
 
 ```bash
-git fetch <remote>
+$ git fetch <remote>
 ```
 
 If your **current branch** is set up to track a remote branch, you can use the `git pull` command to automatically fetch and then merge that remote branch into your current branch.
@@ -355,7 +357,7 @@ The command for this is simple: `git push <remote> <branch>`.
 If you want to push your master branch to your origin server (again, cloning generally sets up both of those names for you automatically), then you can run this to push any commits you’ve done back up to the server:
 
 ```bash
-git push origin master
+$ git push origin master
 ```
 
 #### Inspecting a Remote
@@ -363,7 +365,7 @@ git push origin master
 If you want to see more information about a particular remote, you can use the `git remote show <remote>` command.
 
 ```bash
-git remote show origin
+$ git remote show origin
 ```
 
 #### Renaming and Removing Remotes
@@ -372,7 +374,7 @@ You can run `git remote rename` to change a remote’s shortname. For instance, 
 `suho` to `sh`, you can do so with git remote rename:
 
 ```bash
-git remove remove suho sh
+$ git remove remove suho sh
 ```
 
 ### Tagging
@@ -384,7 +386,7 @@ Git has the ability to tag specific points in a repository’s history as being 
 Listing the existing tags in Git is straightforward. Just type `git tag` (with optional -l or --list):
 
 ```bash
-git tag
+$ git tag
 ```
 
 #### Creating Tags
@@ -400,13 +402,13 @@ A **lightweight** tag is very much like a branch that doesn’t change — it’
 Creating an annotated tag in Git is simple. The easiest way is to specify -a when you run the tag command:
 
 ```bash
-git tag -a v0.0.1 -m "Version 0.0.1"
+$ git tag -a v0.0.1 -m "Version 0.0.1"
 ```
 
 You can see the tag data with `git show` command
 
 ```bash
-git show v0.0.1
+$ git show v0.0.1
 ```
 
 **Lightweight Tags**
@@ -414,7 +416,7 @@ git show v0.0.1
 Another way to tag commits is with a lightweight tag. This is basically the commit checksum stored in a file — no other information is kept. To create a lightweight tag, don’t supply any of the `-a`, `-s`, or `-m` options, just provide a tag name:
 
 ```bash
-git tag v0.0.2-lw
+$ git tag v0.0.2-lw
 ```
 
 If you run git show on the tag (v0.0.2-lw), you don’t see the extra tag information.
@@ -426,7 +428,7 @@ By default, the `git push` command doesn’t transfer tags to remote servers. Yo
 This process is just like sharing remote branches — you can run `git push origin <tagname>`
 
 ```bash
-git push origin v0.0.1
+$ git push origin v0.0.1
 
 # Push all tags
 git push origin --tags
@@ -437,7 +439,7 @@ git push origin --tags
 To delete a tag on your local repository, you can use `git tag -d <tagname>`. For example, we could remove our lightweight tag above as follows:
 
 ```bash
-git tag -d v0.0.2-lw
+$ git tag -d v0.0.2-lw
 ```
 
 > Note that this does not remove the tag from any remote servers. 
@@ -445,14 +447,14 @@ git tag -d v0.0.2-lw
 The way to delete a remote tag is with:
 
 ```bash
-git push origin --delete <tagname>
+$ git push origin --delete <tagname>
 ```
 
 #### Checking out Tags
 If you want to view the versions of files a tag is pointing to, you can do a `git checkout` of that tag
 
 ```bash
-git checkout v0.0.1
+$ git checkout v0.0.1
 ```
 
 ## Git Branching
@@ -476,7 +478,7 @@ The default branch name in Git is `master`. As you start making commits, you’r
 What happens when you create a new branch? Well, doing so creates a new pointer for you to move around. Let’s say you want to create a new branch called testing. You do this with the git branch command:
 
 ```bash
-git branch testing
+$ git branch testing
 ```
 
 This creates a new pointer to the same commit you’re currently on.
@@ -496,7 +498,7 @@ The `git branch` command only **created** a new branch — it didn’t **switch*
 To switch to an existing branch, you run the `git checkout` command. Let’s switch to the new `testing` branch:
 
 ```bash
-git checkout testing
+$ git checkout testing
 ```
 
 This moves `HEAD` to point to the `testing` branch.
@@ -514,7 +516,7 @@ The `HEAD` branch moves forward when a commit is made
 This is interesting, because now your `testing` branch has moved forward, but your `master` branch still points to the commit you were on when you ran `git checkout` to switch branches. Let’s switch back to the `master` branch:
 
 ```bash
-git checkout master
+$ git checkout master
 ```
 
 <p align="center">
@@ -557,13 +559,13 @@ You’ve decided that you’re going to work on issue #53 in whatever issue-trac
 To create a new branch and switch to it at the same time, you can run the `git checkout` command with the `-b` switch:
 
 ```bash
-git checkout -b iss53
+$ git checkout -b iss53
 ```
 
 This is shorthand for:
 
 ```bash
-git branch iss53
+$ git branch iss53
 git checkout iss53
 ```
 
@@ -576,13 +578,13 @@ You work on your website and do some commits. Doing so moves the iss53 branch fo
 Now you get the call that there is an issue with the website, and you need to fix it immediately. With Git, you don’t have to deploy your fix along with the `iss53` changes you’ve made, and you don’t have to put a lot of effort into reverting those changes before you can work on applying your fix to what is in production. All you have to do is switch back to your `master` branch.
 
 ```bash
-git checkout master
+$ git checkout master
 ```
 
 Next, you have a `hotfix` to make. Let’s create a `hotfix` branch on which to work until it’s completed
 
 ```bash
-git checkout -b hotfix
+$ git checkout -b hotfix
 ```
 
 <p align="center">
@@ -592,7 +594,7 @@ git checkout -b hotfix
 You can run your tests, make sure the hotfix is what you want, and finally merge the `hotfix` branch back into your `master` branch to deploy to production. You do this with the `git merge` command
 
 ```bash
-git checkout master
+$ git checkout master
 git merge hotfix
 ```
 
@@ -603,13 +605,13 @@ git merge hotfix
 After your super-important fix is deployed, you’re ready to switch back to the work you were doing before you were interrupted. However, first you’ll delete the `hotfix` branch, because you no longer need it — the `master` branch points at the same place. You can delete it with the `-d` option to `git branch`:
 
 ```bash
-git branch -d hotfix
+$ git branch -d hotfix
 ```
 
 Now you can switch back to your work-in-progress branch on issue #53 and continue working on it.
 
 ```bash
-git checkout iss53
+$ git checkout iss53
 ```
 
 ![Image 16]
@@ -621,7 +623,7 @@ It’s worth noting here that the work you did in your `hotfix` branch is not co
 Suppose you’ve decided that your issue #53 work is complete and ready to be merged into your `master` branch. In order to do that, you’ll merge your `iss53` branch into `master`, much like you merged your `hotfix` branch earlier. All you have to do is check out the branch you wish to merge into and then run the git merge command:
 
 ```bash
-git checkout master
+$ git checkout master
 git merge iss53
 ```
 
@@ -630,7 +632,7 @@ git merge iss53
 Now that your work is merged in, you have no further need for the `iss53` branch. You can close the ticket in your ticket-tracking system, and delete the branch:
 
 ```bash
-git branch -d iss53
+$ git branch -d iss53
 ```
 
 #### Basic Merge Conflicts
@@ -638,7 +640,7 @@ git branch -d iss53
 Occasionally, this process doesn’t go smoothly. If you changed the same part of the same file differently in the two branches you’re merging, Git won’t be able to merge them cleanly. If your fix for issue #53 modified the same part of a file as the hotfix branch, you’ll get a merge conflict that looks something like this
 
 ```bash
-git merge iss53
+$ git merge iss53
 Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then commit the result.
@@ -646,7 +648,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Anything that has merge conflicts and hasn’t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts. Your file contains a section that looks something like this:
 
-```diff
+```html
 <<<<<<< HEAD:index.html
 <div id="footer">Contact : e.support@example.com</div>
 =======
@@ -656,9 +658,7 @@ Please contact us at support@example.com
 >>>>>>> iss53:index.html
 ```
 
-This means the version in HEAD (your master branch, because that was what you had checked out
-when you ran your merge command) is the top part of that block (everything above the =======),
-while the version in your iss53 branch looks like everything in the bottom part
+This means the version in HEAD (your master branch, because that was what you had checked out when you ran your merge command) is the top part of that block (everything above the =======), while the version in your iss53 branch looks like everything in the bottom part.
 
 In order to resolve the conflict, you have to either choose one side or the other or merge the contents yourself. For instance, you might resolve this conflict by replacing the entire block with this: 
 
@@ -667,6 +667,54 @@ In order to resolve the conflict, you have to either choose one side or the othe
 please contact us at email.support@github.com
 </div>
 ```
+
+### Branch Management
+
+Now that you’ve created, merged, and deleted some branches, let’s look at some branchmanagement tools that will come in handy when you begin using branches all the time.
+
+The `git branch` command does more than just create and delete branches. If you run it with no arguments, you get a simple listing of your current branches:
+
+```bash
+$ git branch
+  iss53
+* master
+  testing
+```
+
+> Notice the `*` character that prefixes the `master` branch: it indicates the branch that you currently
+have checked out (i.e., the branch that `HEAD` points to)
+
+To see the last commit on each branch, you can run `git branch -v`:
+
+```bash
+$ git branch -v
+```
+
+The useful `--merged` and `--no-merged` options can filter this list to branches that you have or have not yet merged into the branch you’re currently on
+
+```bash
+$ git branch --merged
+$ git branch --no-merged
+```
+
+### Rebasing
+
+In Git, there are two main ways to integrate changes from one branch into another: the merge and the rebase. In this section you’ll learn what rebasing is, how to do it, why it’s a pretty amazing tool, and in what cases you won’t want to use it.
+
+#### The Basic Rebase
+
+If you go back to an earlier example from [Basic Merging](#basic-merging), you can see that you diverged your work
+and made commits on two different branches.
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image18.png">
+</p>
+
+The easiest way to integrate the branches, as we’ve already covered, is the `merge` command.
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image19.png">
+</p>
 
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
