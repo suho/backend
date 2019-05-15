@@ -15,6 +15,7 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
     - [What is Git?](#what-is-git)
   - [Git Basics](#git-basics)
     - [Getting a Git Repository](#getting-a-git-repository)
+    - [Recording Changes to the Repository](#recording-changes-to-the-repository)
   - [Git Branching](#git-branching)
   - [Git On The Server](#git-on-the-server)
   - [Distributed Git](#distributed-git)
@@ -189,6 +190,22 @@ specify the new directory name as an additional argument:
 git clone https://github.com/libgit2/libgit2 mylibgit
 ```
 
+### Recording Changes to the Repository
+
+Each file in your working directory can be in one of two states: tracked or
+untracked. 
+
+**Tracked files** are files that were in the last snapshot; they can be unmodified, modified,
+or staged. In short, tracked files are files that Git knows about.
+
+**Untracked files** are everything else — any files in your working directory that were not in your last
+snapshot and are not in your staging area. When you first clone a repository, all of your files will be
+tracked and unmodified because Git just checked them out and you haven’t edited anything.
+
+<p align="center">
+  <img src='../img/section1.chapter1/Image4.png' width='50%'>
+</p>
+
 ## Git Branching
 
 In this section, you will learn what truly sets Git apart from the pack
@@ -226,4 +243,5 @@ After know all about Git and can wield it with power and grace, you can move on 
 [Image 1]: ../img/section1.chapter1/Image1.jpg
 [Image 2]: ../img/section1.chapter1/Image2.jpg
 [Image 3]: ../img/section1.chapter1/Image3.jpg
+[Image 4]: ../img/section1.chapter1/Image4.png
 [git-scm]: https://git-scm.com
