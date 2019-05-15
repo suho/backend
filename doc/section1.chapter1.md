@@ -25,6 +25,7 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
     - [Basic Branching and Merging](#basic-branching-and-merging)
     - [Branch Management](#branch-management)
     - [Rebasing](#rebasing)
+    - [Summary](#summary)
 
 ## Getting Started
 
@@ -809,7 +810,13 @@ If you follow that guideline, you’ll be fine. If you don’t, people will hate
 
 When you rebase stuff, you’re abandoning existing commits and creating new ones that are similar but different. If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with git rebase and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.
 
-For more example, please take a look in ![Pro Git][Pro Git] book.
+For more example, please take a look in [Pro Git][Pro Git] book.
+
+### Summary
+
+We’ve covered basic branching and merging in Git. You should feel comfortable creating and switching to new branches, switching between branches and merging local branches together. You should also be able to share your branches by pushing them to a shared server, working with others on shared branches and rebasing your branches before they are shared.
+
+
 
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
