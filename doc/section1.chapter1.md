@@ -22,7 +22,7 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
     - [Tagging](#tagging)
   - [Git Branching](#git-branching)
     - [Branches in a Nutshell](#branches-in-a-nutshell)
-  - [Distributed Git](#distributed-git)
+    - [Basic Branching and Merging](#basic-branching-and-merging)
 
 ## Getting Started
 
@@ -505,9 +505,47 @@ Now, let’s make a few changes and commit again.
 
 ![Image 11]
 
-## Distributed Git
+### Basic Branching and Merging
 
-We will go over in full detail various distributed workflows and how to accomplish them with Git, after this section, you will be able to work expertly with multiple remote repositories
+Let’s go through a simple example of branching and merging with a workflow that you might use in
+the real world. You’ll follow these steps:
+
+1. Do some work on a website.
+2. Create a branch for a new user story you’re working on.
+3. Do some work in that branch.
+
+At this stage, you’ll receive a call that another issue is critical and you need a hotfix. You’ll do the
+following:
+
+1. Switch to your production branch.
+2. Create a branch to add the hotfix.
+3. After it’s tested, merge the hotfix branch, and push to production.
+4. Switch back to your original user story and continue working.
+
+#### Basic Branching
+
+First, let’s say you’re working on your project and have a couple of commits already on the master branch.
+
+![Image 12]
+
+You’ve decided that you’re going to work on issue #53 in whatever issue-tracking system your company uses. 
+
+To create a new branch and switch to it at the same time, you can run the `git checkout` command with the `-b` switch:
+
+```bash
+git checkout -b iss53
+```
+
+This is shorthand for:
+
+```bash
+git branch iss53
+git checkout iss53
+```
+
+You work on your website and do some commits. Doing so moves the iss53 branch forward, because you have it checked out (that is, your HEAD is pointing to it).
+
+
 
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
@@ -522,4 +560,6 @@ We will go over in full detail various distributed workflows and how to accompli
 [Image 9]: ../img/section1.chapter1/Image9.png
 [Image 10]: ../img/section1.chapter1/Image10.png
 [Image 11]: ../img/section1.chapter1/Image11.png
+[Image 12]: ../img/section1.chapter1/Image12.png
+[Image 13]: ../img/section1.chapter1/Image13.png
 [git-scm]: https://git-scm.com
