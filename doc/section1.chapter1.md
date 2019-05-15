@@ -748,6 +748,29 @@ You can also have your rebase replay on something other than the rebase target b
   <img src="../img/section1.chapter1/Image22.png">
 </p>
 
+Suppose you decide that you want to merge your client-side changes into your mainline for a release, but you want to hold off on the server-side changes until it’s tested further. You can take the changes on client that aren’t on server (`C8` and `C9`) and replay them on your `master` branch by using the `--onto` option of `git rebase`:
+
+```bash
+$ git rebase --onto master server client
+```
+
+This basically says, "Take the client branch, figure out the patches since it diverged from the server branch, and replay these patches in the client branch as if it was based directly off the master branch instead." It's a bit complex, but the result is pretty cool.
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image23.png">
+</p>
+
+Now you can fast-forward your `master` branch
+
+```bash
+$ git checkout master
+$ git merge client
+```
+
+<p align="center">
+  <img src="../img/section1.chapter1/Image24.png">
+</p>
+
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
 [git-scm]: https://git-scm.com
