@@ -39,9 +39,7 @@ If you are a developer and you want to keep every version of your code, a Versio
 
 Git is a **Distributed Version Control System** (DVCS), in a DVCS, clients don't just check out the latest snapshot of the files; rather, the fully mirror the repository, including its full history. Thus, if any server dies, and these systems were collaborating via the server, any of the client repositories can be copied back up to the server to restore it.
 
-<p align="center">
-  <img src='../img/section1.chapter1/Image1.jpg'>
-</p>
+![Image 1]
 
 ### What is Git?
 
@@ -289,7 +287,7 @@ git log
 
 One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to redo that commit, make the additional changes you forgot, stage them, and commit again using the --amend option:
 
-```zsh
+```bash
 git commit --amend
 ```
 
