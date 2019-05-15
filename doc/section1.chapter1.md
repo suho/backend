@@ -16,6 +16,8 @@ In this chapter, I will show basic knowledges from [Pro Git][Pro Git] book, if y
   - [Git Basics](#git-basics)
     - [Getting a Git Repository](#getting-a-git-repository)
     - [Recording Changes to the Repository](#recording-changes-to-the-repository)
+    - [Viewing the Commit History](#viewing-the-commit-history)
+    - [Undoing Things](#undoing-things)
   - [Git Branching](#git-branching)
   - [Git On The Server](#git-on-the-server)
   - [Distributed Git](#distributed-git)
@@ -184,7 +186,7 @@ Each file in your working directory can be in one of two states: tracked or untr
 The main tool you use to determine which files are in which state is the `git status` command.
 
 ```bash
-$ git status
+git status
 ```
 
 #### Tracking New Files
@@ -192,7 +194,7 @@ $ git status
 In order to begin tracking a new file, you use the command `git add`. To begin tracking the README file, you can run this:
 
 ```bash
-$ git add [fileName]
+git add [fileName]
 ```
 
 #### Staging Modified Files
@@ -234,6 +236,62 @@ The rules for the patterns you can put in the `.gitignore` file are as follows:
 - You can start patterns with a forward slash (/) to avoid recursivity.
 - You can end patterns with a forward slash (/) to specify a directory.
 - You can negate a pattern by starting it with an exclamation point (!).
+
+#### Viewing Your Staged and Unstaged Changes
+
+If you want to know exactly what you changed, not just which files were changed — you can use the `git diff` command
+
+```bash
+git diff
+```
+
+#### Committing Your Changes
+
+Now that your staging area is set up the way you want it, you can commit your changes. Remember that anything that is still unstaged — any files you have created or modified that you haven’t run git add on since you edited them — won’t go into this commit. They will stay as modified files on your disk. In this case, let’s say that the last time you ran git status, you saw that everything was staged, so you’re ready to commit your changes. 
+
+The simplest way to commit is to type git commit:
+
+```bash
+git commit
+```
+
+Alternatively, you can type your commit message inline with the commit command by specifying it
+after a -m flag, like this:
+
+```bash
+git commit -m "Story 01: Fix Login UI`
+```
+
+### Viewing the Commit History
+
+After you have created several commits, or if you have cloned a repository with an existing commit history, you’ll probably want to look back to see what has happened. The most basic and powerful tool to do this is the git log command.
+
+```bash
+git log
+```
+
+#### Common Options to `git log`
+
+| Option          | Description                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| -p              | Show the patch introduced with each commit.                                                                                        |
+| --stat          | Show statistics for files modified in each commit.                                                                                 |
+| --shortstat     | Display only the changed/insertions/deletions line from the --stat command.                                                        |
+| --name-only     | Show the list of files modified after the commit information.                                                                      |
+| --name-status   | Show the list of files affected with added/modified/deleted information as well.                                                   |
+| --abbrev-commit | Show only the first few characters of the SHA-1 checksum instead of all 40.                                                        |
+| --relative-date | Display the date in a relative format (for example, “2 weeks ago”) instead of using the full date format.                          |
+| --graph         | Display an ASCII graph of the branch and merge history beside the log output.                                                      |
+| --pretty        | Show commits in an alternate format. Options include oneline, short, full, fuller, and format (where you specify your own format). |
+| --oneline       | Shorthand for --pretty=oneline --abbrev-commit used together                                                                       |
+
+### Undoing Things
+
+One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to redo that commit, make the additional changes you forgot, stage them, and commit again using the --amend option:
+
+```zsh
+git commit --amend
+```
 
 ## Git Branching
 
