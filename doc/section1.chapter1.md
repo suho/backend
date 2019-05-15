@@ -545,7 +545,7 @@ git checkout iss53
 
 You work on your website and do some commits. Doing so moves the iss53 branch forward, because you have it checked out (that is, your HEAD is pointing to it).
 
-
+![Image 13]
 
 [Su Ho]: https://github.com/suho
 [Pro Git]: https://git-scm.com/book/en/v2
