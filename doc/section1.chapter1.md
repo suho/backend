@@ -455,7 +455,23 @@ Git’s branching model as its `killer feature`. The way Git branches is incredi
 
 ### Branches in a Nutshell
 
-As you may remember from [Getting Started](#getting-started), Git doesn’t store data as a series of changesets or differences, but instead as a series of snapshots
+The default branch name in Git is `master`. As you start making commits, you’re given a `master` branch that points to the last commit you made. Every time you commit, the `master` branch pointer moves forward automatically.
+
+> The “master” branch in Git is not a special branch. It is exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
+
+![Image 5]
+
+#### Creating a New Branch
+
+What happens when you create a new branch? Well, doing so creates a new pointer for you to move around. Let’s say you want to create a new branch called testing. You do this with the git branch command:
+
+```bash
+git branch testing
+```
+
+This creates a new pointer to the same commit you’re currently on.
+
+![Image 6]
 
 ## Distributed Git
 
@@ -467,4 +483,6 @@ We will go over in full detail various distributed workflows and how to accompli
 [Image 2]: ../img/section1.chapter1/Image2.jpg
 [Image 3]: ../img/section1.chapter1/Image3.jpg
 [Image 4]: ../img/section1.chapter1/Image4.png
+[Image 5]: ../img/section1.chapter1/Image5.png
+[Image 6]: ../img/section1.chapter1/Image6.png
 [git-scm]: https://git-scm.com
