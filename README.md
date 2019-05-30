@@ -41,7 +41,7 @@ First, thanks to [Developer Roadmap][Roadmap], with the paths that I can take an
 
 [Roadmap]: https://github.com/kamranahmedse/developer-roadmap
 [Chapter 1]: ./doc/chapter1.md
-[Chapter 2]: #
+[Chapter 2]: ./doc/chapter2.md
 [Chapter 3]: #
 [Chapter 4]: #
 [Chapter 5]: #
