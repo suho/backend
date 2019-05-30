@@ -40,7 +40,7 @@ First, thanks to [Developer Roadmap][Roadmap], with the paths that I can take an
 - [Chapter 30: Other knowledges][Chapter 30]
 
 [Roadmap]: https://github.com/kamranahmedse/developer-roadmap
-[Chapter 1]: ./doc/section1.chapter1.md
+[Chapter 1]: ./doc/chapter1.md
 [Chapter 2]: #
 [Chapter 3]: #
 [Chapter 4]: #
